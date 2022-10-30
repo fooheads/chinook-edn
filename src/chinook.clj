@@ -62,7 +62,10 @@
      (into
        {}
        (for [table-name (table-names ds)]
-         [(table-k table-name) (into to (table-data ds table-name opts))])))))
+         [(table-k table-name)
+          (into to (with-meta
+                     (map #(with-meta % nil) (table-data ds table-name opts))
+                     nil))])))))
 
 
 (def edn
