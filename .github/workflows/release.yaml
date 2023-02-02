@@ -15,6 +15,6 @@ jobs:
 
       - uses: jlesquembre/clojars-publish-action@0.3
         env:
-          CLOJARS_USERNAME: ${{ secrets.CLOJARS_USERNAME }}
+          CLOJARS_USERNAME: ${{ env.CLOJARS_USERNAME }}
           CLOJARS_PASSWORD: ${{ secrets.CLOJARS_PASSWORD }}
 
