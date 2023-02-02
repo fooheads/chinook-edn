@@ -62,7 +62,7 @@ The `opts` can contain `:chinook/key-fn` which should be a function that shapes 
 Here is an example:
 
 ```clojure
-(require 
+(require
   '[camel-snake-kebab.core :refer [->PascalCase]]
   '[chinook])
 
@@ -88,7 +88,7 @@ which will return a result shaped like this:
 
 ## Schema
 
-The schema data is extracted from the Chinook XML-file and turned into a clojure datastructure. (Reading the schema it from SQLits gives too little data unfortunately, and involving a non-im-memory database felt out of scope). The XML-file is copied into the `resources` folder of this repo. The var is `chinook/schema` and looks like this: 
+The schema data is extracted from the Chinook XML-file and turned into a clojure datastructure. (Reading the schema it from SQLits gives too little data unfortunately, and involving a non-im-memory database felt out of scope). The XML-file is copied into the `resources` folder of this repo. The var is `chinook/schema` and looks like this:
 
 
 ```clojure
@@ -129,9 +129,9 @@ which means you probably want to add `chinook-edn` to your dev or test
 alias only.
 
 ```clojure
-{:aliases 
- {:dev {:extra-deps 
-        {fooheads/chinook-edn {:mvn/version "0.1.0"}}}}}
+{:aliases
+ {:dev {:extra-deps
+        {fooheads/chinook-edn {:mvn/version "0.1.3"}}}}}
 ```
 
 ## License
