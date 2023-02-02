@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>fooheads</groupId>
+  <groupId>${CLOJARS_GROUP}</groupId>
   <artifactId>chinook-edn</artifactId>
   <version>LATEST</version>
   <name>chinook-edn</name>
   <description>A description</description>
-  <url>https://github.com/$USER/$PROJECT</url>
+  <url>https://github.com/${GITHUB_REPOSITORY}</url>
 
   <licenses>
     <license>
@@ -22,9 +22,9 @@
   </developers>
 
   <scm>
-    <url>https://github.com/$USER/$PROJECT</url>
-    <connection>scm:git:git://github.com/$USER/$PROJECT.git</connection>
-    <developerConnection>scm:git:ssh://git@github.com/$USER/$PROJECT.git</developerConnection>
+    <url>https://github.com/${GITHUB_REPOSITORY}</url>
+    <connection>scm:git:git://github.com/${GITHUB_REPOSITORY}.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/${GITHUB_REPOSITORY}.git</developerConnection>
     <tag>HEAD</tag>
   </scm>
 
