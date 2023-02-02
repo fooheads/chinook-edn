@@ -131,7 +131,7 @@ alias only.
 ```clojure
 {:aliases
  {:dev {:extra-deps
-        {fooheads/chinook-edn {:mvn/version "0.1.4"}}}}}
+        {fooheads/chinook-edn {:mvn/version "0.1.9"}}}}}
 ```
 
 ## License
