@@ -7,8 +7,15 @@
 
 
 (def github-ref (or (System/getenv "GITHUB_REF") "refs/UNKNOWN"))
+(def github-repository (System/getenv "GITHUB_REPOSITORY"))
+(def clojars-group (System/getenv "CLOJARS_GROUP"))
 (def build-folder "target")
 (def jar-content (str build-folder "/classes"))
+(def basis (b/create-basis {:project "deps.edn"}))
+
+
+(assert (seq github-repository) (str "GITHUB_REPOSITORY must be set, was '" github-repository "'"))
+(assert (seq clojars-group) (str "CLOJARS_GROUP must be set, was '" clojars-group "'"))
 
 
 (defn get-version
@@ -18,8 +25,8 @@
     (str "-SNAPSHOT")))
 
 
-(def lib-name 'com.fooheads/stdlib)
-(def basis (b/create-basis {:project "deps.edn"}))
+(def repo-name (last (str/split github-repository #"/")))
+(def lib-name (symbol clojars-group repo-name)) 
 (def jar-file-name (format "%s/%s-%s.jar" build-folder (name lib-name) (get-version)))
 
 

@@ -37,5 +37,9 @@ jobs:
       run: clojure -M:test/clj
 
     - name: Publish to clojars
-      run: CLOJARS_USERNAME=${{ secrets.CLOJARS_USERNAME }} CLOJARS_PASSWORD=${{ secrets.CLOJARS_PASSWORD }} clojure -T:build publish
+      env:
+        CLOJARS_PASSWORD: ${{ secrets.CLOJARS_PASSWORD }} 
+        CLOJARS_USERNAME: ${{ secrets.CLOJARS_USERNAME }} 
+        CLOJARS_GROUP: ${{ secrets.CLOJARS_GROUP }} 
+      run: clojure -T:build publish
 
